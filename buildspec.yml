@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Starting Install!
+  pre_build:
+    commands:
+      - echo pre_build starting!
+  build:
+    commands:
+      - echo building bitches!
+  post_build:
+    commands:
+      - echo I built that shit!

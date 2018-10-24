@@ -1,0 +1,15 @@
+.breadcrumb {
+    background-color: white;
+}
+
+.input-border {
+    border: 2px solid #dadada;
+    border-radius: 7px;
+}
+
+.input-glowing-border { 
+    outline: none;
+    border-color: #ff0000;
+    box-shadow: 0 0 10px #ff0000;
+    border-radius: 7px;
+}
