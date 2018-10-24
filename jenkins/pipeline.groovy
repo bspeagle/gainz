@@ -1,6 +1,6 @@
 node {
     stage("Clone repo and copy to app server.") {
-        sh 'rm -r -f PeopleFinder'
+        sh 'rm -r -f gainz'
         withCredentials([usernamePassword(credentialsId: 'github', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
             sh 'git clone https://$USERNAME:$PASSWORD@github.com/bspeagle/gainz.git'
         }
