@@ -17,7 +17,7 @@ node {
     stage("SSH t-t-time!") {
         sshagent (credentials: ['aws-ec2-user']) {
             withCredentials([string(credentialsId: 'appServer', variable: 'IP')]) {
-                sh 'ssh -o StrictHostKeyChecking=no -l ec2-user $IP "cd gainz; composer install --no-interaction; cd ..; sudo rsync -av --progress gainz /var/www/html --exclude jenkins --exclude .git --exclude .vscode; rm -r gainz"'
+                sh 'ssh -o StrictHostKeyChecking=no -l ec2-user $IP "cd gainz; sudo chgrp -R apache storage bootstrap/cache; composer install --no-interaction; cd ..; sudo rsync -av --progress gainz /var/www/html --exclude jenkins --exclude .git --exclude .vscode; rm -r gainz"'
             }
         }
     }
